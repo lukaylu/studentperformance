@@ -1,0 +1,230 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Student Exam Performance Indicator</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Student Exam Performance Prediction</legend>
+        </h1>        
+        <div class="mb-3">
+            <label class="form-label">Hours Studied</label>
+            <input class="form-control" type="number" name="Hours_Studied"
+                placeholder="Enter your hours studied" min='0' max='50' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Attendance</label>
+            <input class="form-control" type="number" name="Attendance"
+                placeholder="Enter your Attendance" min='0' max='100' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Parental Involvement</label>
+            <select class="form-control" name="Parental_Involvement" placeholder="Enter Parental Involvement" required>
+                <option class="placeholder" selected disabled value="">Select your Parental Involvement</option>
+                <option value="Low">
+                    Low
+                </option>
+                <option value="Medium">
+                    Medium
+                </option>
+                <option value="High">
+                    High
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Access to Resources</label>
+            <select class="form-control" name="Access_to_Resources" placeholder="Enter Access to Resources" required>
+                <option class="placeholder" selected disabled value="">Select your Parental Involvement</option>
+                <option value="Low">
+                    Low
+                </option>
+                <option value="Medium">
+                    Medium
+                </option>
+                <option value="High">
+                    High
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Extracurricular Activities</label>
+            <select class="form-control" name="Extracurricular_Activities" placeholder="Enter Extracurricular Activities" required>
+                <option class="placeholder" selected disabled value="">Select Extracurricular Activities</option>
+                <option value="No">
+                    No
+                </option>
+                <option value="Yes">
+                    Yes
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Sleep Hours out of 10</label>
+            <input class="form-control" type="number" name="Sleep_Hours"
+                placeholder="Enter your sleeping hours" min='0' max='10' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Previous Scores out of 100</label>
+            <input class="form-control" type="number" name="Previous_Scores"
+                placeholder="Enter your Previous Scores" min='0' max='100' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Motivation Level</label>
+            <select class="form-control" name="Motivation_Level" placeholder="Enter Motivation Level" required>
+                <option class="placeholder" selected disabled value="">Select your Motivation Level</option>
+                <option value="Low">
+                    Low
+                </option>
+                <option value="Medium">
+                    Medium
+                </option>
+                <option value="High">
+                    High
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Internet Access</label>
+            <select class="form-control" name="Internet_Access" placeholder="Enter Internet Access" required>
+                <option class="placeholder" selected disabled value="">Select Internet Access</option>
+                <option value="No">
+                    No
+                </option>
+                <option value="Yes">
+                    Yes
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Tutoring Sessions</label>
+            <input class="form-control" type="number" name="Tutoring_Sessions"
+                placeholder="Enter your Tutoring Sessions" min='0' max='10' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Family Income</label>
+            <select class="form-control" name="Family_Income" placeholder="Family Income" required>
+                <option class="placeholder" selected disabled value="">Select your Family Income</option>
+                <option value="Low">
+                    Low
+                </option>
+                <option value="Medium">
+                    Medium
+                </option>
+                <option value="High">
+                    High
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Teacher Quality</label>
+            <select class="form-control" name="Teacher_Quality" placeholder="Teacher Quality" required>
+                <option class="placeholder" selected disabled value="">Select your Teacher Quality</option>
+                <option value="Low">
+                    Low
+                </option>
+                <option value="Medium">
+                    Medium
+                </option>
+                <option value="High">
+                    High
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">School Type</label>
+            <select class="form-control" name="School_Type" placeholder="Enter School Type" required>
+                <option class="placeholder" selected disabled value="">Select School Type</option>
+                <option value="Public">
+                    Public
+                </option>
+                <option value="Private">
+                    Private
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Peer Influence</label>
+            <select class="form-control" name="Peer_Influence" placeholder="Peer Influence" required>
+                <option class="placeholder" selected disabled value="">Select Peer Influence</option>
+                <option value="Positive">
+                    Positive
+                </option>
+                <option value="Negative">
+                    Negative
+                </option>
+                <option value="Neutral">
+                    Neutral
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Physical Activity out of 6</label>
+            <input class="form-control" type="number" name="Physical_Activity"
+                placeholder="Enter Physical Activity" min='0' max='6' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Learning Disabilities</label>
+            <select class="form-control" name="Learning_Disabilities" placeholder="Enter Learning Disabilities" required>
+                <option class="placeholder" selected disabled value="">Select Learning Disabilities</option>
+                <option value="No">
+                    No
+                </option>
+                <option value="Yes">
+                    Yes
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Parental Education Level</label>
+            <select class="form-control" name="Parental_Education_Level"
+                placeholder="Enter your Parent Education" required>
+                <option class="placeholder" selected disabled value="">Select Parent Education</option>
+                <option value="High School">
+                    High School
+                </option>
+                <option value="College">
+                    College
+                </option>
+                <option value="Postgraduate">
+                    Postgraduate
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Distance from Home</label>
+            <select class="form-control" name="Distance_from_Home"
+                placeholder="Enter your Distance from Home" required>
+                <option class="placeholder" selected disabled value="">Select Distance from Home</option>
+                <option value="Near">
+                    Near
+                </option>
+                <option value="Moderate">
+                    Moderate
+                </option>
+                <option value="Far">
+                    Far
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Gender</label>
+            <select class="form-control" name="Gender" placeholder="Gender" required>
+                <option class="placeholder" selected disabled value="">Select Gender</option>
+                <option value="Male">
+                    Male
+                </option>
+                <option value="Female">
+                    Female
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict your Exam Scores" required />
+        </div>
+    </form>
+    <h2>
+       The prediction score is {{results}}
+    </h2>
+   <body>
+</html>
